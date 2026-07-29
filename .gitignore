@@ -1,0 +1,24 @@
+results/
+backend/chroma_db/
+backend/chroma_db.tar.gz
+.vscode/settings.json
+
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+
+# Frontend
+node_modules/
+dist/
+frontend/dist/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db

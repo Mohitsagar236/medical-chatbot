@@ -1,0 +1,134 @@
+.bar {
+  flex-shrink: 0;
+  background: var(--color-panel-bg);
+  border-top: 1px solid var(--color-border);
+  padding: 10px var(--space-lg);
+}
+
+.inner {
+  width: min(100%, var(--content-max-width));
+  margin: 0 auto;
+}
+
+.composerRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+  padding: 6px;
+}
+
+.selectorLabel {
+  flex: 0 0 210px;
+}
+
+.selectorLabel select,
+.compareToggle {
+  width: 100%;
+  height: 36px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-panel-bg);
+  color: var(--color-text-dark);
+  padding: 0 10px;
+  font-weight: 800;
+}
+
+.compareToggle {
+  flex: 0 0 90px;
+  color: var(--color-primary);
+}
+
+.compareToggleActive {
+  color: #ffffff;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.input {
+  flex: 1;
+  resize: none;
+  border: none;
+  padding: 8px 10px;
+  font-size: var(--font-size-base);
+  color: var(--color-text-dark);
+  background: transparent;
+  line-height: 1.4;
+  min-height: 36px;
+  max-height: 96px;
+  overflow-y: auto;
+}
+
+.input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.input:focus {
+  outline: none;
+}
+
+.sendBtn,
+.stopBtn,
+.clearBtn {
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+}
+
+.sendBtn {
+  width: 38px;
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.stopBtn {
+  min-width: 62px;
+  padding: 0 10px;
+  color: var(--color-error);
+  border: 1px solid rgba(180, 35, 24, 0.34);
+  background: var(--color-error-bg);
+}
+
+.clearBtn {
+  min-width: 56px;
+  padding: 0 9px;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  background: var(--color-panel-bg);
+}
+
+.error {
+  color: var(--color-error);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+@media (max-width: 720px) {
+  .bar {
+    padding: 8px var(--space-md);
+  }
+
+  .composerRow {
+    flex-wrap: wrap;
+  }
+
+  .selectorLabel {
+    flex: 1 1 190px;
+  }
+
+  .compareToggle {
+    flex: 0 0 88px;
+  }
+
+  .input {
+    flex-basis: 100%;
+    order: -1;
+  }
+}

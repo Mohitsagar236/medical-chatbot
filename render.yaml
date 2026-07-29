@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: medical-chatbot-api
+    env: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      # Set these in the Render dashboard — do NOT commit real values here
+      - key: PUBMED_EMAIL
+        sync: false
+      - key: NCBI_API_KEY
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      # Static defaults — safe to commit
+      - key: GROQ_MODEL
+        value: llama-3.3-70b-versatile
+      - key: OPENAI_MODEL
+        value: gpt-4o-mini
+      - key: CHROMA_COLLECTION
+        value: pubmed_abstracts
+      - key: CHROMA_PERSIST_DIR
+        value: ./chroma_db
+      - key: TEMPERATURE
+        value: "0.0"
+      - key: MAX_HISTORY_TURNS
+        value: "10"
